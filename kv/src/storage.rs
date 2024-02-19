@@ -1,3 +1,1 @@
-mod storage {
-    pub trait Storage {}
-}
+pub trait Storage {}

@@ -1,5 +1,5 @@
-use clap::Parser;
 use kv::config;
+use clap::Parser;
 
 #[derive(Parser, Debug)]
 #[command(version, about, long_about = None)]
@@ -19,7 +19,8 @@ fn main() {
     let args = Args::parse();
     let mut config = config::Config::default();
 
-    if args.path!="" {
-        config.d
+    if args.path != "" {
+        config.dbpath = args.path;
     }
+
 }
