@@ -1,16 +1,16 @@
 use crate::storage::modify::Modify;
 
 mod modify;
-mod standalone_storage;
+pub mod standalone_storage;
 
 pub trait Storage {
-    fn start();
+    fn start(&self);
 
-    fn stop();
+    fn stop(&self);
 
-    fn write(batch: Vec<Modify>);
+    fn write(&self, batch: Vec<Modify>);
 
-    fn reader() -> impl StorageReader;
+    fn reader(&self) -> Box<dyn StorageReader>;
 }
 
-trait StorageReader{}
+trait StorageReader {}
