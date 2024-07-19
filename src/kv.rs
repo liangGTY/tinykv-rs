@@ -49,6 +49,7 @@ enum Command {
 }
 
 impl Command {
+
     fn set(key: String, value: String) -> Command {
         Set { key, value }
     }
